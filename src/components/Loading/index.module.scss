@@ -1,0 +1,36 @@
+$base-line-height: 250px;
+$blue: #1d1ef1ad;
+$off-blue: rgba($blue, 0.2);
+$light-gray: #d7ecea;
+$spin-duration: 1s;
+
+.loading {
+  width: 100%;
+  height: 100vh;
+  opacity: 0.75;
+  background: $light-gray;
+  display: flex;
+  justify-content: center;
+  padding-top: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__spinner {
+    border-radius: 50%;
+    width: $base-line-height;
+    height: $base-line-height;
+    border: 0.25rem solid $off-blue;
+    border-top-color: $blue;
+    animation: spin $spin-duration infinite linear;
+  }
+}

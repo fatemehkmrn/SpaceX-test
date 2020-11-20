@@ -1,0 +1,53 @@
+$white: #fff;
+$yellow: rgb(239, 242, 79);
+$success: rgb(16, 206, 26);
+$error: rgb(245, 27, 27);
+$border: 1px solid $white;
+
+.container {
+  background: #000;
+  width: 350px;
+  height: 150px;
+  padding: 10px;
+  border: $border;
+  border-radius: 8px;
+  margin: 20px;
+
+  .upper-section {
+    display: flex;
+    justify-content: flex-start;
+    padding-bottom: 5px;
+    height: 130px;
+    &__info {
+      color: $white;
+      font-size: 13px;
+      margin-left: 10px;
+      .status {
+        display: inline-block;
+        vertical-align: middle;
+        width: 12px;
+        height: 12px;
+        border-radius: 6px;
+        &--success {
+          background: $success;
+        }
+        &--failure {
+          background: $error;
+        }
+      }
+      .label{
+        font-weight: bold;
+      }
+    }
+  }
+  .bottom-section {
+    display: flex;
+    justify-content: space-between;
+    color: $white;
+    border-top: $border;
+    a {
+      color: $yellow;
+      font-size: 13px;
+    }
+  }
+}
