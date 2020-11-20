@@ -18,7 +18,7 @@ const RadioGroup = ({ data, onSelect }) => {
   }
 
   return (
-    <React.Fragment>
+    <div className={styles["container"]}>
       {data.map((option, index) => (
         <div key={index} className={styles["option"]}>
           <input
@@ -31,7 +31,7 @@ const RadioGroup = ({ data, onSelect }) => {
           <label className={styles["option__label"]} onClick={() => handleClick(option.key)}>{option.title}</label>
         </div>
       ))}
-    </React.Fragment>
+    </div>
   );
 };
 

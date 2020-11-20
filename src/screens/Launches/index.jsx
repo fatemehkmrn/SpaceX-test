@@ -7,6 +7,8 @@ import LaunchList from "./components/LauchList";
 import { useSelector, useDispatch } from "react-redux";
 // Actions
 import LaunchesActions from "../../store/Launches/actions";
+// Styles
+import styles from "./index.module.scss"
 
 
 const Launches = () => {
@@ -29,6 +31,7 @@ const Launches = () => {
   }
 
   return <div>
+    <div className={styles["title-text"]}>View Launches :</div>
     <RadioGroup data={radioGroupData} onSelect={handleSelectItem} />
     <LaunchList type={launchType} />
   </div>;
