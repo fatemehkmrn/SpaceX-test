@@ -13,22 +13,20 @@ import CommonActions from "./store/Common/actions";
 function App() {
   const dispatch = useDispatch();
   const commonState = useSelector((state) => state.common);
-  console.log("common", commonState.error);
-  const isModalVisible = React.useMemo(() => commonState.error.visible, [
-    commonState.error,
+  const isModalVisible = React.useMemo(() => commonState.errorVisible, [
+    commonState.errorVisible,
   ]);
 
   function handleHideModal() {
     dispatch(CommonActions.setErrorMessageVisibility(false));
   }
-  console.log("loading", commonState.loading);
   return (
     <React.Fragment>
       <Loading visible={commonState.loading} />
       <div className="App">
         <Modal
           visible={isModalVisible}
-          text={commonState.error.text}
+          text={commonState.errorText}
           onOkClicked={handleHideModal}
         />
         <Launches />
